@@ -5,9 +5,7 @@ import * as options from './options';
 (async () => {
   try {
     const dist = options.getDistOption();
-    if (dist) {
-      core.debug(`Using dist: ${dist}`);
-    }
+    core.debug(`Using dist: ${dist}`);
 
     const cli = getCLI({dist});
 
