@@ -20,3 +20,4 @@ jobs:
         MOCK: true
       with:
         environment: production
+        dist: 1
