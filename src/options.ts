@@ -165,3 +165,8 @@ export const getProjects = (): string[] => {
 export const getUrlPrefixOption = (): string => {
   return core.getInput('url_prefix');
 };
+
+export const getDistOption = (): string | undefined => {
+  const dist = core.getInput('dist');
+  return dist.length ? dist : undefined;
+};

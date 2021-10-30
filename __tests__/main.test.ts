@@ -9,6 +9,7 @@ import {
   getSetCommitsOption,
   getProjects,
   getUrlPrefixOption,
+  getDistOption,
 } from '../src/options';
 
 describe('options', () => {
@@ -191,6 +192,21 @@ describe('options', () => {
     it('get url prefix', () => {
       process.env['INPUT_URL_PREFIX'] = 'build';
       expect(getUrlPrefixOption()).toEqual('build');
+    });
+  });
+
+  describe('getDistOption', () => {
+    afterEach(() => {
+      delete process.env['INPUT_DIST'];
+    });
+
+    it('gets the distribution', () => {
+      process.env['INPUT_DIST'] = '1';
+      expect(getDistOption()).toEqual('1');
+    });
+
+    it('returns undefined if option not used', () => {
+      expect(getDistOption()).toBeUndefined();
     });
   });
 });

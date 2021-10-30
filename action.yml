@@ -38,6 +38,9 @@ inputs:
   strip_common_prefix:
     description: 'Will remove a common prefix from uploaded filenames. Useful for removing a path that is build-machine-specific.'
     required: false
+  dist:
+    description: 'Set the distribution tag for this release'
+    require: false
 runs:
   using: 'docker'
   image: 'docker://sentryintegrations/sentry-github-action-release:latest'
