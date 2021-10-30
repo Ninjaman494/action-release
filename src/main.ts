@@ -4,10 +4,10 @@ import * as options from './options';
 
 (async () => {
   try {
-    const dist = options.getDistOption();
-    core.debug(`Using dist: ${dist}`);
+    // const dist = options.getDistOption();
+    // core.debug(`Using dist: ${dist}`);
 
-    const cli = getCLI({dist});
+    const cli = getCLI({dist: '2'});
 
     // Validate options first so we can fail early.
     options.checkEnvironmentVariables();
